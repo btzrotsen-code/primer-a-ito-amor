@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>❤️ FELIZ PRIMER AÑO MI AMOR ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(rgba(7,10,25,.80),rgba(10,10,25,.95)),
+url('foto2.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+overflow-x:hidden;
+}
+
+.overlay{
+min-height:100vh;
+backdrop-filter:blur(6px);
+padding:50px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:clamp(2.2rem,6vw,4.5rem);
+margin-bottom:15px;
+animation:fadeUp 1.4s ease;
+text-shadow:0 0 25px rgba(255,255,255,.15);
+}
+
+.subtitulo{
+font-size:1.2rem;
+opacity:.92;
+margin-bottom:50px;
+animation:fadeUp 1.8s ease;
+}
+
+.hero img{
+width:300px;
+max-width:90%;
+border-radius:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+animation:flotar 5s ease-in-out infinite;
+margin-bottom:50px;
+}
+
+.carta{
+max-width:850px;
+margin:auto;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+padding:40px;
+border-radius:35px;
+backdrop-filter:blur(20px);
+font-size:1.18rem;
+line-height:1.9;
+text-align:left;
+box-shadow:0 0 40px rgba(255,255,255,.05);
+}
+
+.carta h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+#texto{
+white-space:pre-wrap;
+min-height:200px;
+}
+
+.galeria{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.galeria img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+transition:.35s;
+}
+
+.galeria img:hover{
+transform:scale(1.03);
+}
+
+.final{
+margin-top:70px;
+padding:40px;
+border-radius:35px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+font-size:1.2rem;
+line-height:1.8;
+box-shadow:0 0 30px rgba(255,255,255,.06);
+}
+
+.corazon{
+position:fixed;
+bottom:-20px;
+opacity:.4;
+animation:subir linear infinite;
+pointer-events:none;
+}
+
+@keyframes subir{
+from{
+transform:translateY(0);
+opacity:.7;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@keyframes flotar{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h1>❤️ FELIZ PRIMER AÑO MI AMOR ❤️</h1>
+
+<p class="subtitulo">
+Un sitio web dedicado al amor de mi vida.<br>
+En conmemoración de nuestro 1er añito juntos ❤️
+</p>
+
+<div class="hero">
+<img src="foto1.jpg" alt="Nosotros">
+</div>
+
+<div class="carta">
+<h2>Una carta para ti 💌</h2>
+<p id="texto"></p>
+</div>
+
+<div class="galeria">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+
+<div class="final">
+<h2 style="margin-bottom:20px;">
+Para terminar... ❤️
+</h2>
+
+<p>
+Ojalá pudieras verte con mis ojos por un momento, que indagues mi mente,
+para que confirmes que solo existes tú en mi ser.
+
+Te amo mucho, amor ❤️
+</p>
+</div>
+
+</div>
+</div>
+
+<script>
+
+const mensaje = `Gracias por permitirme ser parte de tu vida, por elegirme a mí entre tantos, de ser yo quien ría contigo y seque tus lágrimas.
+
+Tengo toda una vida para complacerte, quererte y servirte...
+
+y otra vida que, cuando no esté aquí, te amará con toda el alma desde el más allá. ❤️`;
+
+let i = 0;
+
+function escribir(){
+if(i < mensaje.length){
+document.getElementById("texto").innerHTML += mensaje.charAt(i);
+i++;
+setTimeout(escribir,40);
+}
+}
+
+escribir();
+
+/* corazones suaves */
+
+for(let i=0;i<35;i++){
+const c=document.createElement("div");
+c.className="corazon";
+c.innerHTML="❤️";
+c.style.left=Math.random()*100+"vw";
+c.style.animationDuration=(5+Math.random()*7)+"s";
+c.style.fontSize=(15+Math.random()*18)+"px";
+document.body.appendChild(c);
+}
+
+</script>
+
+</body>
+</html>
